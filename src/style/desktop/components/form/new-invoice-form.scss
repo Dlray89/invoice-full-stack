@@ -1,0 +1,190 @@
+@import "../../animation/slide-in.scss";
+
+.form-container {
+  background-color: white;
+  padding: 0px 90px;
+  color: black;
+  width: 75%;
+  position: absolute;
+  top:-0em;
+  left: -16em;
+  z-index: 0;
+  text-align: center;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  animation: slideIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.521);
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__new-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: auto;
+    text-align: left;
+    
+
+    &--bill-from-form {
+      width: 100%;
+
+      &__address {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        margin-top: 1em;
+
+        &--input {
+            padding: 10px 10px;
+            border: solid 2px rgba(0, 0, 0, 0.274);
+            border-radius: 5px;
+            color: black;
+            font-size: 1em;
+            margin-top: .4em;
+
+        }
+
+      }
+
+      &__address-two {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+
+        &--inputs {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          &__input {
+            padding: 10px 10px;
+            border: solid 2px rgba(0, 0, 0, 0.274);
+            border-radius: 5px;
+            color: black;
+            font-size: 1em;
+            margin-top: .4em;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+
+    &--bill-to {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+
+
+        &--inputs {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 1em;
+            &__input {
+                padding: 10px 10px;
+                border: solid 2px rgba(0, 0, 0, 0.274);
+                border-radius: 5px;
+                color: black;
+                font-size: 1em;
+                margin-top: .4em;
+                width: 100%;
+              }
+
+          }
+
+          &--inputs-two-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        &--inputs {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 1em;
+
+            &__input {
+                padding: 10px 10px;
+                border: solid 2px rgba(0, 0, 0, 0.274);
+                border-radius: 5px;
+                color: black;
+                font-size: 1em;
+                margin-top: .4em;
+                width: 100%;
+              }
+
+        }
+          }
+    }
+
+    &--services {
+
+        &__date-and-payment {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 1em;
+
+            &--date {
+                display: flex;
+                flex-direction: column;
+
+                &__input {
+                    padding: 10px 10px;
+                    border: solid 2px rgba(0, 0, 0, 0.274);
+                    border-radius: 5px;
+                    color: black;
+                    font-size: 1em;
+                    margin-top: .4em;
+                    width: 100%;
+                  }
+            }
+
+            &--payments {
+                display: flex;
+                flex-direction: column;
+
+                &__input {
+                    padding: 10px 10px;
+                    border: solid 2px rgba(0, 0, 0, 0.274);
+                    border-radius: 5px;
+                    color: black;
+                    font-size: 1em;
+                    margin-top: .4em;
+                    width: 100%;
+                  }
+            }
+        }
+
+        &__project-desc {
+            margin-top: 1em;
+           &--name {
+            display: flex;
+            flex-direction: column;
+
+            &__input {
+                padding: 10px 10px;
+                border: solid 2px rgba(0, 0, 0, 0.274);
+                border-radius: 5px;
+                color: black;
+                font-size: 1em;
+                margin-top: .4em;
+                width: 100%;
+              }
+           }
+        }
+    }
+  }
+
+  &__btn {
+    background-color: red;
+    color: white;
+  }
+}

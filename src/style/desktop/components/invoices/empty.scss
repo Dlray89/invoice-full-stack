@@ -1,0 +1,27 @@
+.empty-invoices {
+    text-align: center;
+    padding: 140px 10px;
+
+
+    &__img {
+        width: 25%;
+    }
+
+    &__text-content {
+
+        &--title {
+            font-size: 1.6rem;
+            margin-bottom: .2em;
+        }
+
+        &--content {
+            font-size: 1em;
+            width: 19%;
+            margin: 0 auto;
+
+            &__special-text {
+                font-weight: 600;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import '../../typography/variables.scss';
+
+
+.invoice-list-container {
+
+    
+    &__list {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 30px;
+        width: 60%;
+        margin: 1em auto;
+        background-color: white;
+        border-radius: 10px 10px;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+
+        &--textOrange {
+            background-color: $invoice-light-org;
+            padding: 7px 15px;
+            width: 15%;
+            text-align: center;
+            border-radius: 10px;
+            text-transform: uppercase;
+            color: $invoice-org;
+            text-decoration: none;
+        }
+
+        &--textGreen {
+                background-color: $invoice-light-green;
+                padding: 7px 10px;
+                width: 15%;
+                text-align: center;
+                border-radius: 10px;
+                text-transform: uppercase;
+                color: $invoice-green;
+                text-decoration: none;
+
+        }
+    }
+}

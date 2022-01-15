@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import { InvoiceProvidee } from "./context/invoiceProvider";
+// import { SplitScreen } from "./layout/SplitScreen";
+// import { RightSideComponent } from "./layout/RightComponent";
+// import { LeftSideComponent } from "./layout/LeftComponent";
+import { Router } from "./router";
+import { FormProvider } from "./context/form-context/Form-Provider";
+import { FilterProvider } from "./context/filter-btn/FilterProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {" "}
+      <InvoiceProvidee>
+        <FilterProvider>
+          <FormProvider>
+            <Router />
+          </FormProvider>
+        </FilterProvider>
+      </InvoiceProvidee>
+    </>
   );
 }
 
