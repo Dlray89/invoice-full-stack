@@ -20,7 +20,7 @@ invoiceRouter.get('/', (req, res) => {
 invoiceRouter.post('', (req, res) => {
     const newInvoice = req.body
     invoicesModel.add(newInvoice).then(invoices => {
-        res.status(200).json(invoices)
+        res.status(200).send(invoices)
     })
         .catch(err => {
         res.status(500).json({ message: `${err}:Cannot create a new invoice`})

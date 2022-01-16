@@ -19,7 +19,7 @@ function findById(id) {
 function add(invoices) {
   return invoiceDB("invoices")
     .insert(invoices)
-    .then((ids) => ({ id: ids[0], message: 'new invoice created' }));
+    .then((ids) => ({ id: ids[0], message: 'new invoice created', invoices }));
 }
 
 function update(change, id) {

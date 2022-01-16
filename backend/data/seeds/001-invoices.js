@@ -16,7 +16,7 @@ exports.seed = function (knex) {
           senderCity: "Knoxville",
           senderState: "TN",
           senderZipcode: "37918",
-          total: 0,
+          total: 200,
           paymentDue: '03/20/2022',
           paymentTerms: 24,
           clientStreet: "234 main",
