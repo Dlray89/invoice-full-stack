@@ -3,6 +3,7 @@ import { FromContext } from "../../context/form-context/Form-Context";
 
 export const NewInvoiceForm = () => {
   const {
+    addNewForm ,
     openForm,
     setOpenForm,
     AddNewInvoice,
@@ -34,10 +35,13 @@ export const NewInvoiceForm = () => {
     setClientZipcode,
     total,
     setTotal,
+    streetErr
   } = useContext(FromContext);
 
+  
+
   return (
-      <form className="form-container" onSubmit={(e) => { e.preventDefault(); AddNewInvoice()}}>
+      <form className="form-container" onSubmit={(e) => { e.preventDefault(); addNewForm()}}>
       <h3 className="form-container__title">New Invoice</h3>
       <div className="form-container__new-form-container">
         <div className="form-container__new-form-container--bill-from-form">
@@ -51,6 +55,7 @@ export const NewInvoiceForm = () => {
               value={senderStreet}
               onChange={(e) => setSenderStreet(e.target.value)}
             />
+            {senderStreet.length <  2 ? "This is required" : ""}
           </label>
 
           <div className="form-container__new-form-container--bill-from-form__address-two">
@@ -161,13 +166,12 @@ export const NewInvoiceForm = () => {
             <label className="form-container__new-form-container--services__date-and-payment--payments">
               {" "}
               Payment Terms
-              <select
+              <input type='number'
                 onChange={(e) => setPaymentTerms(e.target.value)}
                 value={paymentTerms}
                 className="form-container__new-form-container--services__date-and-payment--payments__input"
-              >
-                <option>Net 30 days</option>
-              </select>
+            /  >
+            
             </label>
           </div>
 

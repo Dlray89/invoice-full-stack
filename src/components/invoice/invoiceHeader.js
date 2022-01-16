@@ -13,7 +13,7 @@ export const InvoiceHeader = () => {
       <div className="header-container--title-content">
         <h1 className="header-container--title-content__title">Invoices</h1>
         <p className="header-container--title-content__subtitle">
-          There are {invoicesList.length} total invoices
+          {/* There are {invoicesList.length} total invoices */}
         </p>
       </div>
 

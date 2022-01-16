@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { InvoiceContext } from "./invoiceContext";
-import { invoices } from "../data";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
+export const InvoiceProvidee = ({ children }) => {
+  const [invoicesList, setInvoicesList] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://invoice-be22.herokuapp.com/api/invoices")
+      .then((res) => {
+        const invoiceResults = res.data;
+        setInvoicesList(invoiceResults);
+        console.log(invoiceResults);
+      })
+      .catch((err) => {
+        console.log(`${err}: error occured`);
+      });
+  }, []);
 
-
-
-export const InvoiceProvidee = ({children}) => {
-const [invoicesList, setInvoicesList] = useState([])
-useEffect(() => {
-    (async () => {
-      const response = await axios.get('http://localhost:8080/invoices')
-      setInvoicesList(response.data)
-      console.log(response.data,'data')
-   })()
-  }, [])
-
-    return (
-        <InvoiceContext.Provider value={{  invoicesList, setInvoicesList}} >
-            {children}
-        </InvoiceContext.Provider>
-    )
-}
+  return (
+    <InvoiceContext.Provider value={{ invoicesList, setInvoicesList }}>
+      {children}
+    </InvoiceContext.Provider>
+  );
+};
