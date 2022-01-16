@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import Plus from "../../assets/icon-plus.svg";
-// import { InvoiceContext } from "../../context/invoiceContext";
+import { InvoiceContext } from "../../context/invoiceContext";
 import { FromContext } from "../../context/form-context/Form-Context";
 import { FilterBtn } from "../filter-btn/Filter-btn";
 
 export const InvoiceHeader = () => {
-  // const { invoicesList } = useContext(InvoiceContext);
+  const { invoicesList } = useContext(InvoiceContext);
   const { setOpenForm } = useContext(FromContext);
 
   return (
@@ -13,7 +13,7 @@ export const InvoiceHeader = () => {
       <div className="header-container--title-content">
         <h1 className="header-container--title-content__title">Invoices</h1>
         <p className="header-container--title-content__subtitle">
-          {/* There are {invoicesList.length} total invoices */}
+          There are {invoicesList.length} total invoices
         </p>
       </div>
 

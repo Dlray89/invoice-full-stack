@@ -42,11 +42,11 @@ export const FilterBtn = () => {
           <>
             <button
               onClick={() => setToggleFilterBtn(true)}
-              className="header-container--filter-container__title"
+              className="header-container--filter-container__title-container"
             >
-              <span> Filter by status</span>{" "}
+              <span className="header-container--filter-container__title-container--title"> Filter by status</span>{" "}
               <img
-                className="header-container--filter-container__title--icon"
+                className="header-container--filter-container__title-container--icon"
                 src={ArrowDwn}
                 alt="icon of down arrow"
               />

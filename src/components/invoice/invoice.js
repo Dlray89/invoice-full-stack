@@ -55,7 +55,7 @@ export const InvoiceListItems = () => {
             <p>${Number(invoice.total).toFixed(2)} </p>
             <p
               className={
-                invoice.status === "pending"
+                invoice.status
                   ? "invoice-list-container__list--textGreen"
                   : "invoice-list-container__list--textOrange"
               }

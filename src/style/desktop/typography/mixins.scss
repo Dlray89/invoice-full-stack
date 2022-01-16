@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+
+@mixin StatusGreen {
+    background-color: $invoice-light-green;
+    padding: 7px 10px;
+   
+    text-align: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: $invoice-green;
+    text-decoration: none
+}
+
+@mixin statusOrange {
+    background-color: $invoice-light-org;
+    padding: 7px 15px;
+  
+    text-align: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: $invoice-org;
+    text-decoration: none;
+    
+}

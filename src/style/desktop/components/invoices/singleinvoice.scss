@@ -1,0 +1,196 @@
+@import "../../typography/mixins.scss";
+@import "../../typography/variables.scss";
+
+.single-invoice-container {
+  padding: 20px 20px;
+
+  &__go-back-btn {
+      margin-top: 2em;
+    &--btn {
+      border: none;
+      background: none;
+      width: 8%;
+      padding: 10px;
+      display: flex;
+      justify-content: row;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+
+      &__icon {
+      }
+
+      &__text {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 1em;
+    background-color: $invoice-lightgrey;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+    &--title-box {
+      padding: 10px;
+
+      &__status-orange {
+        border: none;
+        @include statusOrange;
+      }
+
+      &__status-green {
+        border: none;
+        @include StatusGreen;
+        width: 20%;
+      }
+    }
+
+    &--btns-container {
+      padding: 10px;
+      width: 44%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &__edit {
+        border: none;
+        padding: 15px;
+        background-color: $invoice-lightgrey;
+        border-radius: 50px;
+        width: 17%;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+      }
+
+      &__delete {
+        border: none;
+        padding: 15px;
+        background-color: $invoice-red;
+        border-radius: 50px;
+        width: 30%;
+        color: white;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+      }
+
+      &__markaspaid {
+        border: none;
+        padding: 15px;
+        background-color: $invoice-blue;
+        border-radius: 50px;
+        width: 30%;
+        color: white;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+      }
+    }
+  }
+
+  &--details {
+    margin-top: 2em;
+    background-color: $invoice-lightgrey;
+    padding: 20px;
+    margin-top: 1em;
+    background-color: $invoice-lightgrey;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+
+    &__senders-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &--title-box {
+        &__id {
+          font-size: 1.5rem;
+        }
+
+        &__descript {
+          font-size: 1.3rem;
+        }
+      }
+
+      &--address {
+        width: 30%;
+        text-align: right;
+
+        &__text {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    &__bill-to {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 1.7em;
+
+      &--dates {
+        &__date {
+          margin-bottom: 1em;
+
+          &--title {
+            font-size: 1.2em;
+          }
+
+          &--subdate {
+            font-size: 1em;
+          }
+        }
+      }
+
+      &--container {
+          width: 30%;
+
+          &__name-box {
+            margin-bottom: .7em;
+            &--title {
+                margin-bottom: .2em;
+                font-size: 1.2em;
+
+
+            }
+
+            &--name {
+                font-size: 1.4rem;
+            }
+          }
+
+
+          &__address-box {
+              width: 100%;
+
+              &--address {
+                  font-size: 1rem;
+                  letter-spacing: 1px;
+              }
+          }
+
+      }
+
+      &--email-box {
+        width: 30%;
+        text-align: right;
+
+        &__title {
+            margin-bottom: .2em;
+            font-size: 1.2em;
+
+        }
+
+        &__email {
+            font-size: 1rem;
+            
+        }
+    }
+    }
+  }
+}

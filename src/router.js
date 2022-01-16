@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import SingleInvoice from "./components/invoice/SingleInvoice";
+import SingleInvoice from "./components/invoice/singleinvoice/SingleInvoice";
 import Home from "./Home";
 
 export const Router = () => {

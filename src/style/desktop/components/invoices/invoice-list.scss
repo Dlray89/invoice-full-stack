@@ -1,5 +1,5 @@
 @import '../../typography/variables.scss';
-
+@import '../../typography/mixins.scss';
 
 .invoice-list-container {
 
@@ -20,25 +20,13 @@
         box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
 
         &--textOrange {
-            background-color: $invoice-light-org;
-            padding: 7px 15px;
+            @include statusOrange;
             width: 15%;
-            text-align: center;
-            border-radius: 10px;
-            text-transform: uppercase;
-            color: $invoice-org;
-            text-decoration: none;
         }
 
         &--textGreen {
-                background-color: $invoice-light-green;
-                padding: 7px 10px;
-                width: 15%;
-                text-align: center;
-                border-radius: 10px;
-                text-transform: uppercase;
-                color: $invoice-green;
-                text-decoration: none;
+           @include StatusGreen;
+           width: 15%;
 
         }
     }

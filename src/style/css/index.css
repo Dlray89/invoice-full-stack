@@ -79,22 +79,22 @@
 .invoice-list-container__list--textOrange {
   background-color: #ff910034;
   padding: 7px 15px;
-  width: 15%;
   text-align: center;
   border-radius: 10px;
   text-transform: uppercase;
   color: #FF8F00;
   text-decoration: none;
+  width: 15%;
 }
 .invoice-list-container__list--textGreen {
   background-color: #33d6a025;
   padding: 7px 10px;
-  width: 15%;
   text-align: center;
   border-radius: 10px;
   text-transform: uppercase;
   color: #06cc37;
   text-decoration: none;
+  width: 15%;
 }
 
 .header-container {
@@ -113,7 +113,7 @@
   font-size: 1.1rem;
 }
 .header-container--filter-container {
-  width: 50%;
+  width: 58%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -121,10 +121,10 @@
   padding: 0px 10px;
 }
 .header-container--filter-container__filter-btn-container {
-  width: 54.2%;
+  width: 58%;
 }
 .header-container--filter-container__filter-btn-container--btn {
-  width: 70%;
+  width: 55.6%;
   padding: 10px;
   background: #7c5dfa;
   border: none;
@@ -161,22 +161,24 @@
 .header-container--filter-container__filter-btn-container--selection-filters__btn:hover {
   background: lightgray;
 }
-.header-container--filter-container__title {
-  font-size: 1rem;
+.header-container--filter-container__title-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  width: 45%;
+  width: 46%;
   padding: 10px;
   background: none;
   border: none;
   text-transform: uppercase;
   cursor: pointer;
 }
-.header-container--filter-container__title--icon {
-  width: 12%;
-  height: 12%;
+.header-container--filter-container__title-container--title {
+  font-size: 0.9rem;
+}
+.header-container--filter-container__title-container--icon {
+  width: 9%;
+  height: 9%;
+  margin-left: 0.7em;
 }
 .header-container--filter-container__button {
   border: none;
@@ -188,7 +190,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 37%;
+  width: 38%;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
   cursor: pointer;
 }
@@ -202,6 +204,7 @@
 }
 .header-container--filter-container__button--text {
   color: white;
+  font-size: 1rem;
 }
 
 .empty-invoices {
@@ -390,6 +393,172 @@
 .form-container__btn {
   background-color: red;
   color: white;
+}
+
+.single-invoice-container {
+  padding: 20px 20px;
+}
+.single-invoice-container__go-back-btn {
+  margin-top: 2em;
+}
+.single-invoice-container__go-back-btn--btn {
+  border: none;
+  background: none;
+  width: 8%;
+  padding: 10px;
+  display: flex;
+  justify-content: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+.single-invoice-container__go-back-btn--btn__text {
+  text-decoration: none;
+}
+.single-invoice-container__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 1em;
+  background-color: #F9FAFE;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+}
+.single-invoice-container__header--title-box {
+  padding: 10px;
+}
+.single-invoice-container__header--title-box__status-orange {
+  border: none;
+  background-color: #ff910034;
+  padding: 7px 15px;
+  text-align: center;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: #FF8F00;
+  text-decoration: none;
+}
+.single-invoice-container__header--title-box__status-green {
+  border: none;
+  background-color: #33d6a025;
+  padding: 7px 10px;
+  text-align: center;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: #06cc37;
+  text-decoration: none;
+  width: 20%;
+}
+.single-invoice-container__header--btns-container {
+  padding: 10px;
+  width: 44%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.single-invoice-container__header--btns-container__edit {
+  border: none;
+  padding: 15px;
+  background-color: #F9FAFE;
+  border-radius: 50px;
+  width: 17%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+}
+.single-invoice-container__header--btns-container__delete {
+  border: none;
+  padding: 15px;
+  background-color: red;
+  border-radius: 50px;
+  width: 30%;
+  color: white;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+}
+.single-invoice-container__header--btns-container__markaspaid {
+  border: none;
+  padding: 15px;
+  background-color: #7c5dfa;
+  border-radius: 50px;
+  width: 30%;
+  color: white;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+}
+.single-invoice-container--details {
+  margin-top: 2em;
+  background-color: #F9FAFE;
+  padding: 20px;
+  margin-top: 1em;
+  background-color: #F9FAFE;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+}
+.single-invoice-container--details__senders-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.single-invoice-container--details__senders-info--title-box__id {
+  font-size: 1.5rem;
+}
+.single-invoice-container--details__senders-info--title-box__descript {
+  font-size: 1.3rem;
+}
+.single-invoice-container--details__senders-info--address {
+  width: 30%;
+  text-align: right;
+}
+.single-invoice-container--details__senders-info--address__text {
+  font-size: 1.3rem;
+}
+.single-invoice-container--details__bill-to {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1.7em;
+}
+.single-invoice-container--details__bill-to--dates__date {
+  margin-bottom: 1em;
+}
+.single-invoice-container--details__bill-to--dates__date--title {
+  font-size: 1.2em;
+}
+.single-invoice-container--details__bill-to--dates__date--subdate {
+  font-size: 1em;
+}
+.single-invoice-container--details__bill-to--container {
+  width: 30%;
+}
+.single-invoice-container--details__bill-to--container__name-box {
+  margin-bottom: 0.7em;
+}
+.single-invoice-container--details__bill-to--container__name-box--title {
+  margin-bottom: 0.2em;
+  font-size: 1.2em;
+}
+.single-invoice-container--details__bill-to--container__name-box--name {
+  font-size: 1.4rem;
+}
+.single-invoice-container--details__bill-to--container__address-box {
+  width: 100%;
+}
+.single-invoice-container--details__bill-to--container__address-box--address {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+.single-invoice-container--details__bill-to--email-box {
+  width: 30%;
+  text-align: right;
+}
+.single-invoice-container--details__bill-to--email-box__title {
+  margin-bottom: 0.2em;
+  font-size: 1.2em;
+}
+.single-invoice-container--details__bill-to--email-box__email {
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=index.css.map */

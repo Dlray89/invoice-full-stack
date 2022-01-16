@@ -4,11 +4,10 @@ import axios from "axios";
 
 export const InvoiceProvidee = ({ children, props }) => {
   const [invoicesList, setInvoicesList] = useState([]);
-  
 
   useEffect(() => {
     axios
-      .get("https://invoice-be22.herokuapp.com/api/invoices")
+      .get("http://localhost:8080/api/invoices")
       .then((res) => {
         const invoiceResults = res.data;
         setInvoicesList(invoiceResults);
@@ -19,12 +18,39 @@ export const InvoiceProvidee = ({ children, props }) => {
       });
   }, []);
 
+  const toggleStatus = (id) => {
+    axios
+      .put(`http://localhost:8080/api/invoices/${id}`, {  status: true })
+      .then((res) => {
+        setInvoicesList(res.data.change)
+          console.log(res.data.change,'change');
+          console.log(invoicesList)
+          window.location.reload()
+      })
+      .catch((err) => {
+        console.log(`${err}: 'error had occured`);
+      });
+  };
 
-
-  
+  const UntoggleStatus = (id) => {
+    axios
+      .put(`http://localhost:8080/api/invoices/${id}`, {  status: false})
+      .then((res) => {
+        setInvoicesList(res.data.change)
+          console.log(res.data.change,'change');
+          console.log(invoicesList)
+          window.location.reload()
+      })
+      .catch((err) => {
+        console.log(`${err}: 'error had occured`);
+      });
+  };
+ 
 
   return (
-    <InvoiceContext.Provider value={{ invoicesList, setInvoicesList}}>
+    <InvoiceContext.Provider
+      value={{ invoicesList, setInvoicesList, toggleStatus, UntoggleStatus}}
+    >
       {children}
     </InvoiceContext.Provider>
   );
