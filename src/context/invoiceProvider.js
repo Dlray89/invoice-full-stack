@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { InvoiceContext } from "./invoiceContext";
 import axios from "axios";
 
-export const InvoiceProvidee = ({ children }) => {
+export const InvoiceProvidee = ({ children, props }) => {
   const [invoicesList, setInvoicesList] = useState([]);
+  
+
   useEffect(() => {
     axios
-      .get("https://invoice-be22.herokuapp.com/api/invoices")
+      .get("http://localhost:8080/api/invoices")
       .then((res) => {
         const invoiceResults = res.data;
         setInvoicesList(invoiceResults);
@@ -17,8 +19,12 @@ export const InvoiceProvidee = ({ children }) => {
       });
   }, []);
 
+
+
+  
+
   return (
-    <InvoiceContext.Provider value={{ invoicesList, setInvoicesList }}>
+    <InvoiceContext.Provider value={{ invoicesList, setInvoicesList}}>
       {children}
     </InvoiceContext.Provider>
   );

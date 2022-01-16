@@ -24,7 +24,7 @@ export const FormProvider = ({ children }) => {
 
   const addNewForm = (e) => {
     axios
-      .post("https://invoice-be22.herokuapp.com/api/invoices", {
+      .post("http://localhost:8080/api/invoices", {
         clientName,
         paymentDue,
         description,

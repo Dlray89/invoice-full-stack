@@ -4,6 +4,7 @@ import SingleInvoice from "./components/invoice/SingleInvoice";
 import Home from "./Home";
 
 export const Router = () => {
+
   return (
     <>
       <Routes>

@@ -4,9 +4,7 @@ import { FromContext } from "../../context/form-context/Form-Context";
 export const NewInvoiceForm = () => {
   const {
     addNewForm ,
-    openForm,
     setOpenForm,
-    AddNewInvoice,
     paymentDue,
     setPaymentDue,
     description,
@@ -33,9 +31,7 @@ export const NewInvoiceForm = () => {
     setClientState,
     clientZipcode,
     setClientZipcode,
-    total,
-    setTotal,
-    streetErr
+
   } = useContext(FromContext);
 
   

@@ -8,7 +8,7 @@ import ArrowDwn from "../../assets/icon-arrow-down.svg";
 
 export const FilterBtn = () => {
 
-    const { toggleFilterBtn, setToggleFilterBtn, filterStatus  } = useContext(FilterContext);
+    const { toggleFilterBtn, setToggleFilterBtn  } = useContext(FilterContext);
     return (
         <>
         {toggleFilterBtn ? (

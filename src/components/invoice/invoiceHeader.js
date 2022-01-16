@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import Plus from "../../assets/icon-plus.svg";
-import { InvoiceContext } from "../../context/invoiceContext";
+// import { InvoiceContext } from "../../context/invoiceContext";
 import { FromContext } from "../../context/form-context/Form-Context";
 import { FilterBtn } from "../filter-btn/Filter-btn";
 
 export const InvoiceHeader = () => {
-  const { invoicesList } = useContext(InvoiceContext);
+  // const { invoicesList } = useContext(InvoiceContext);
   const { setOpenForm } = useContext(FromContext);
 
   return (

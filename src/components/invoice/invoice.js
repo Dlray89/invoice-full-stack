@@ -52,7 +52,7 @@ export const InvoiceListItems = () => {
             </p>
             <p>{invoice.paymentDue}</p>
             <p>{invoice.clientName}</p>
-            <p>${invoice.total} </p>
+            <p>${Number(invoice.total).toFixed(2)} </p>
             <p
               className={
                 invoice.status === "pending"
