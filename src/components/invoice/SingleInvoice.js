@@ -11,7 +11,7 @@ function SingleInvoice({ clientName }) {
 
   useEffect(() => {
     axios
-    .get(`http://localhost:8080/api/invoices/${id}`)
+    .get(`https://invoice-be22.herokuapp.com/api/invoices/${id}`)
     .then((res) => {
       const SingleInvoice = res.data;
       console.log(SingleInvoice, 'single');

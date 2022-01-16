@@ -156,6 +156,7 @@ export const NewInvoiceForm = () => {
                 className="form-container__new-form-container--services__date-and-payment--date__input"
                 type="date"
                 value={paymentDue}
+                required pattern="\d{4}-\d{2}-\d{2}"
                 onChange={(e) => setPaymentDue(e.target.value)}
               />
             </label>

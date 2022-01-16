@@ -8,7 +8,7 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/invoices")
+      .get("https://invoice-be22.herokuapp.com/api/invoices")
       .then((res) => {
         const invoiceResults = res.data;
         setInvoicesList(invoiceResults);
