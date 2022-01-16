@@ -20,7 +20,7 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const toggleStatus = (id) => {
     axios
-      .put(`https://invoice-be22.herokuapp.com/invoices/${id}`, {  status: true })
+      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, {  status: true })
       .then((res) => {
         setInvoicesList(res.data.change)
           console.log(res.data.change,'change');
