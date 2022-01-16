@@ -7,7 +7,7 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/invoices")
+      .get("https://invoice-be22.herokuapp.com/api/invoices")
       .then((res) => {
         const invoiceResults = res.data;
         setInvoicesList(invoiceResults);
@@ -20,7 +20,7 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const toggleStatus = (id) => {
     axios
-      .put(`http://localhost:8080/api/invoices/${id}`, {  status: true })
+      .put(`https://invoice-be22.herokuapp.com/invoices/${id}`, {  status: true })
       .then((res) => {
         setInvoicesList(res.data.change)
           console.log(res.data.change,'change');
@@ -34,7 +34,7 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const UntoggleStatus = (id) => {
     axios
-      .put(`http://localhost:8080/api/invoices/${id}`, {  status: false})
+      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, {  status: false})
       .then((res) => {
         setInvoicesList(res.data.change)
           console.log(res.data.change,'change');
