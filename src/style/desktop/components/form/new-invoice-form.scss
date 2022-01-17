@@ -10,11 +10,11 @@
   left: -16em;
   z-index: 0;
   text-align: center;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   animation: slideIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.521);
-
+overflow-y: scroll;
   &__title {
     font-size: 2rem;
   }
@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 70%;
+    width: 65%;
     margin-left: auto;
     text-align: left;
     
@@ -69,7 +69,7 @@
             color: black;
             font-size: 1em;
             margin-top: .4em;
-            width: 100%;
+            width: 90%;
           }
         }
       }
@@ -109,6 +109,7 @@
             flex-direction: column;
             justify-content: space-between;
             margin-top: 1em;
+            width: 100%;
 
             &__input {
                 padding: 10px 10px;
@@ -117,7 +118,7 @@
                 color: black;
                 font-size: 1em;
                 margin-top: .4em;
-                width: 100%;
+                width: 90%;
               }
 
         }
@@ -183,8 +184,76 @@
     }
   }
 
-  &__btn {
-    background-color: red;
+
+&__itemsList {
+  border: solid 2px red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1em;
+
+  &--title {
+    font-size: 1.5rem;
+  }
+
+  &--input-boxes {
+    border: solid 2px red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    &__itemNAme {
+      
+    }
+  }
+}
+
+
+  &__btn-container {
     color: white;
+    margin-top: 1.3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: auto;
+    padding: 20px;
+
+    &--discard-btn {
+        background-color: #F9FAFE;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        width: 20%;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+    }
+
+    &--sendbtns {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__draft {
+        background-color: #373B53;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        width: 40%;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+      }
+
+      &__saveandsendbtn {
+        background-color: $invoice-blue;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        width: 40%;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+      }
+    }
   }
 }

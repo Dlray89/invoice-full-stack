@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { FromContext } from "../../context/form-context/Form-Context";
 
-export const NewInvoiceForm = () => {
-  const {
-    addNewForm,
-    setOpenForm,
+export const EditForm = ({ id }) => {
+
+    const {
+        setOpenEditForm,
+        toggleEditInouts,
+
     paymentDue,
     setPaymentDue,
     description,
@@ -31,24 +33,12 @@ export const NewInvoiceForm = () => {
     setClientState,
     clientZipcode,
     setClientZipcode,
-    price,
-    setPrice,
-    qty,
-    setQty,
-    itemName,
-    setItemName,
-    newItem,
+
   } = useContext(FromContext);
 
+
   return (
-    <form
-      className="form-container"
-      onSubmit={(e) => {
-        e.preventDefault();
-        addNewForm();
-        newItem()
-      }}
-    >
+      <form className="form-container" onSubmit={(e) => { e.preventDefault(); toggleEditInouts(id)}}>
       <h3 className="form-container__title">New Invoice</h3>
       <div className="form-container__new-form-container">
         <div className="form-container__new-form-container--bill-from-form">
@@ -62,7 +52,7 @@ export const NewInvoiceForm = () => {
               value={senderStreet}
               onChange={(e) => setSenderStreet(e.target.value)}
             />
-            {senderStreet.length < 2 ? "This is required" : ""}
+            {senderStreet.length <  2 ? "This is required" : ""}
           </label>
 
           <div className="form-container__new-form-container--bill-from-form__address-two">
@@ -167,20 +157,19 @@ export const NewInvoiceForm = () => {
                 className="form-container__new-form-container--services__date-and-payment--date__input"
                 type="date"
                 value={paymentDue}
-                required
-                pattern="\d{4}-\d{2}-\d{2}"
+                required pattern="\d{4}-\d{2}-\d{2}"
                 onChange={(e) => setPaymentDue(e.target.value)}
               />
             </label>
             <label className="form-container__new-form-container--services__date-and-payment--payments">
               {" "}
               Payment Terms
-              <input
-                type="number"
+              <input type='number'
                 onChange={(e) => setPaymentTerms(e.target.value)}
                 value={paymentTerms}
                 className="form-container__new-form-container--services__date-and-payment--payments__input"
-              />
+            /  >
+            
             </label>
           </div>
 
@@ -196,42 +185,17 @@ export const NewInvoiceForm = () => {
             </label>
           </div>
         </div>
-
-        <div className="form-container__itemsList">
-          <h4 className="form-container__itemsList--title">Item List  </h4>
-
-          <form onSubmit={(e) => { e.preventDefault(); newItem()}} className="form-container__itemsList--input-boxes">
-            <label className="form-container__itemsList--input-boxes__itemNAme">
-              Item NAme{" "}
-              <input
-                value={itemName}
-                onChange={(e) => setItemName(e.target.value)}
-                placeholder="Add Item"
-              />
-            </label>
-
-            <label>
-              Qty. <input placeholder="QTY" value={qty} onChange={(e) => setQty(e.target.value)} />{" "}
-            </label>
-
-            <label>
-              Price
-              <input placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)} />
-            </label>
-
-            <label>Total</label>
-          </form>
-        </div>
+        <div></div>
       </div>
-
       <div className="form-container__btn-container">
         {" "}
         <button
-          onClick={() => setOpenForm(false)}
+           onClick={() => setOpenEditForm(false)}
           className="form-container__btn-container--discard-btn"
         >
           Discard
         </button>
+
         <div className="form-container__btn-container--sendbtns">
           <button
             className="form-container__btn-container--sendbtns__draft"

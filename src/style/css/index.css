@@ -1,8 +1,8 @@
 .sidebar-container {
   background-color: #1e2139;
   width: 40%;
-  height: 44em;
-  min-height: 55em;
+  height: 45em;
+  min-height: 56em;
   border-top-right-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -148,7 +148,6 @@
   border-bottom-right-radius: 10px;
 }
 .header-container--filter-container__filter-btn-container--selection-filters__btn {
-  background: rgba(139, 139, 139, 0.486);
   border: none;
   color: black;
   padding: 5px;
@@ -157,9 +156,6 @@
   letter-spacing: 2px;
   font-weight: 500;
   cursor: pointer;
-}
-.header-container--filter-container__filter-btn-container--selection-filters__btn:hover {
-  background: lightgray;
 }
 .header-container--filter-container__title-container {
   display: flex;
@@ -247,10 +243,11 @@
   left: -16em;
   z-index: 0;
   text-align: center;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   animation: slideIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.521);
+  overflow-y: scroll;
 }
 .form-container__title {
   font-size: 2rem;
@@ -259,7 +256,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 70%;
+  width: 65%;
   margin-left: auto;
   text-align: left;
 }
@@ -300,7 +297,7 @@
   color: black;
   font-size: 1em;
   margin-top: 0.4em;
-  width: 100%;
+  width: 90%;
 }
 .form-container__new-form-container--bill-to {
   display: flex;
@@ -332,6 +329,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-top: 1em;
+  width: 100%;
 }
 .form-container__new-form-container--bill-to--inputs-two-container--inputs__input {
   padding: 10px 10px;
@@ -340,7 +338,7 @@
   color: black;
   font-size: 1em;
   margin-top: 0.4em;
-  width: 100%;
+  width: 90%;
 }
 .form-container__new-form-container--services__date-and-payment {
   display: flex;
@@ -390,9 +388,84 @@
   margin-top: 0.4em;
   width: 100%;
 }
-.form-container__btn {
-  background-color: red;
+.form-container__itemsList {
+  border: solid 2px red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+.form-container__itemsList--title {
+  font-size: 1.5rem;
+}
+.form-container__itemsList--input-boxes {
+  border: solid 2px red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.form-container__btn-container {
   color: white;
+  margin-top: 1.3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  margin-left: auto;
+  padding: 20px;
+}
+.form-container__btn-container--discard-btn {
+  background-color: #F9FAFE;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 20%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+}
+.form-container__btn-container--sendbtns {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-container__btn-container--sendbtns__draft {
+  background-color: #373B53;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 40%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+}
+.form-container__btn-container--sendbtns__saveandsendbtn {
+  background-color: #7c5dfa;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 40%;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+}
+
+.filter-btn-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5em;
+  padding: 5px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+  border-radius: 5px;
+  border: none;
+}
+.filter-btn-container:hover {
+  background: lightgray;
+  color: white;
+}
+.filter-btn-container__text {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .single-invoice-container {
@@ -466,6 +539,7 @@
   border-radius: 50px;
   width: 17%;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+  cursor: pointer;
 }
 .single-invoice-container__header--btns-container__delete {
   border: none;
@@ -475,6 +549,7 @@
   width: 30%;
   color: white;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+  cursor: pointer;
 }
 .single-invoice-container__header--btns-container__markaspaid {
   border: none;
@@ -484,11 +559,12 @@
   width: 30%;
   color: white;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+  cursor: pointer;
 }
 .single-invoice-container--details {
   margin-top: 2em;
   background-color: #F9FAFE;
-  padding: 20px;
+  padding: 20px 50px;
   margin-top: 1em;
   background-color: #F9FAFE;
   border-radius: 10px;
@@ -559,6 +635,39 @@
 }
 .single-invoice-container--details__bill-to--email-box__email {
   font-size: 1rem;
+}
+.single-invoice-container--details__items-box {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  background-color: #dfe3fa33;
+  padding: 20px 0px;
+  margin-top: 2em;
+  padding-bottom: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.single-invoice-container--details__items-box--items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5em;
+  padding: 20px;
+}
+.single-invoice-container--details__items-box--amount-box {
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.single-invoice-container--details__items-box--amount-box--title {
+  color: white;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -67,6 +67,7 @@
         border-radius: 50px;
         width: 17%;
         box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+        cursor: pointer;
       }
 
       &__delete {
@@ -77,6 +78,8 @@
         width: 30%;
         color: white;
         box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+        cursor: pointer;
+
       }
 
       &__markaspaid {
@@ -87,6 +90,8 @@
         width: 30%;
         color: white;
         box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+        cursor: pointer;
+
       }
     }
   }
@@ -94,7 +99,7 @@
   &--details {
     margin-top: 2em;
     background-color: $invoice-lightgrey;
-    padding: 20px;
+    padding: 20px 50px; 
     margin-top: 1em;
     background-color: $invoice-lightgrey;
     border-radius: 10px;
@@ -191,6 +196,44 @@
             
         }
     }
+    }
+
+
+    &__items-box {
+      border: none;
+      display: flex;
+      flex-direction: column;
+      background-color: #dfe3fa33;
+      padding: 20px 0px;
+      margin-top: 2em;
+      padding-bottom: 0;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+
+      &--items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: .5em;
+        padding: 20px;
+      }
+
+      &--amount-box {
+        background-color: black;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        &--title {
+          color: white;
+          font-size: 2rem;
+        }
+      }
     }
   }
 }

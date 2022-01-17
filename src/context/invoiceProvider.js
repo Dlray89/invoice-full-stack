@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { InvoiceContext } from "./invoiceContext";
 import axios from "axios";
+import { createBrowserHistory } from "history";
+
+
+
 
 export const InvoiceProvidee = ({ children, props }) => {
+  const [toggleFilterBtn, setToggleFilterBtn] = useState(false)
   const [invoicesList, setInvoicesList] = useState([]);
+  const history = createBrowserHistory();
+  const [filter, setFilter] = useState("All");
 
   useEffect(() => {
     axios
@@ -20,12 +27,12 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const toggleStatus = (id) => {
     axios
-      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, {  status: true })
+      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, { status: true })
       .then((res) => {
-        setInvoicesList(res.data.change)
-          console.log(res.data.change,'change');
-          console.log(invoicesList)
-          window.location.reload()
+        setInvoicesList(res.data.change);
+        console.log(res.data.change, "change");
+        console.log(invoicesList);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(`${err}: 'error had occured`);
@@ -34,22 +41,68 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const UntoggleStatus = (id) => {
     axios
-      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, {  status: false})
+      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, { status: false })
       .then((res) => {
-        setInvoicesList(res.data.change)
-          console.log(res.data.change,'change');
-          console.log(invoicesList)
-          window.location.reload()
+        setInvoicesList(res.data.change);
+        console.log(res.data.change, "change");
+        console.log(invoicesList);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(`${err}: 'error had occured`);
       });
   };
- 
+
+  const filterStatus = {
+    All: () => true,
+    Pending: (item) => !item.status,
+    Paid: (item) => item.status,
+  };
+  const NewStatList = Object.keys(filterStatus);
+  const StatusList = NewStatList.map((item) => (
+    <>
+    
+     <button
+        className="filter-btn-container"
+        aria-pressed={item === filter}
+        key={item}
+        onClick={() => {
+          setFilter(item); setToggleFilterBtn(false)
+        }}
+      >
+        <p     className="filter-btn-container__text">{item}</p>
+      </button>
+    </>
+     
+  ));
+
+  const DeleteInvoice = (id) => {
+    axios
+      .delete(`http://localhost:8080/api/invoices/${id}`)
+      .then((res) => {
+        setInvoicesList(res.data);
+        history.push("/");
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(`${err}: 'error had occured`);
+      });
+  };
 
   return (
     <InvoiceContext.Provider
-      value={{ invoicesList, setInvoicesList, toggleStatus, UntoggleStatus}}
+      value={{
+        filter,
+        setFilter,
+        StatusList,
+        DeleteInvoice,
+        invoicesList,
+        setInvoicesList,
+        toggleStatus,
+        UntoggleStatus,
+        filterStatus,
+        toggleFilterBtn, setToggleFilterBtn
+      }}
     >
       {children}
     </InvoiceContext.Provider>

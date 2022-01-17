@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Plus from "../../assets/icon-plus.svg";
 import { InvoiceContext } from "../../context/invoiceContext";
 import { FromContext } from "../../context/form-context/Form-Context";
 import { FilterBtn } from "../filter-btn/Filter-btn";
 
 export const InvoiceHeader = () => {
-  const { invoicesList } = useContext(InvoiceContext);
+  const { invoicesList, StatusList } = useContext(InvoiceContext);
   const { setOpenForm } = useContext(FromContext);
+  const [filter, setFilter] = useState('Pending')
+
 
   return (
     <div className="header-container">
@@ -19,7 +21,7 @@ export const InvoiceHeader = () => {
 
       <div className="header-container--filter-container">
         {/* ////filter button here */}
-        <FilterBtn />
+        <FilterBtn StatusList={StatusList} filter={filter} setFilter={setFilter} />
         <button
           onClick={() => setOpenForm(true)}
           className="header-container--filter-container__button"

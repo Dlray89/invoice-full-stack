@@ -1,19 +1,24 @@
-import { useContext } from "react";
+import { useContext  } from "react";
 import { InvoiceContext } from "../../context/invoiceContext";
 import { Link } from "react-router-dom";
 import leftarrow from "../../assets/icon-arrow-right.svg";
 import empty from "../../assets/illustration-empty.svg";
 import { FromContext } from "../../context/form-context/Form-Context";
 import { NewInvoiceForm } from "../forms/new-invoice-form";
+import RouterScroll from "../../utils/RouterScroll";
 
 export const InvoiceListItems = () => {
-  const { invoicesList } = useContext(InvoiceContext);
+  const { invoicesList, NewStatList, StatusList, filter,  filterStatus  } = useContext(InvoiceContext);
   const { openForm } = useContext(FromContext);
   const numberOfInvoices = invoicesList.length;
 
+  
+
   return numberOfInvoices === 0 ? (
     <>
+      <RouterScroll />
       <div className="empty-invoices">
+        {console.log(NewStatList, StatusList , 'newStatus')}
         <img className="empty-invoices__img" src={empty} alt="empty" />
         <div className="empty-invoices__text-content">
           <h3 className="empty-invoices__text-content--title">
@@ -40,7 +45,7 @@ export const InvoiceListItems = () => {
     <>
       {" "}
       <div className="invoice-list-container">
-        {invoicesList.map((invoice) => (
+        {invoicesList.filter(filterStatus[filter]).map((invoice) => (
           <Link
             to={`${invoice.id}`}
             className="invoice-list-container__list"

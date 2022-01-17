@@ -61,7 +61,6 @@
         border-bottom-right-radius: 10px;
 
         &__btn {
-          background: rgba(139, 139, 139, 0.486);
           border: none;
           color: black;
           padding: 5px;
@@ -72,9 +71,7 @@
           cursor: pointer;
           
 
-          &:hover {
-            background: lightgray;
-          }
+          
         }
       }
     }
