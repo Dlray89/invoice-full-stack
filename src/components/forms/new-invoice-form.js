@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Alert } from "@mui/material";
 import { FromContext } from "../../context/form-context/Form-Context";
+import { AddItemForm } from "./add-item-form";
 
 export const NewInvoiceForm = () => {
   const {
@@ -31,14 +33,44 @@ export const NewInvoiceForm = () => {
     setClientState,
     clientZipcode,
     setClientZipcode,
-    price,
-    setPrice,
-    qty,
-    setQty,
-    itemName,
-    setItemName,
+    setTotal,
+    total,
+    newInvoiceErr,
+    setNewInvoiceErr,
+    errorFormText,
+    setErrorFormText,
     newItem,
+    itemTwoQty,
+    setItemTwoQty,
+    itemTwo,
+    setItemTwo
   } = useContext(FromContext);
+
+  const [addInput, setAddInput] = useState(false);
+  const [streetErr, setStreetErr] = useState("");
+
+
+  const pushInput = () => {
+    const newinput = document.createElement("input");
+    newinput.className = "form-container__itemsList--input-boxes__itemInput";
+    newinput.setAttribute("text", "text");
+    newinput.value = itemTwo;
+    newinput.addEventListener("change", (e) => setItemTwo(e.target.value))
+    newinput.placeholder = "Add Item";
+
+    const newQTYInput = document.createElement("input");
+    newQTYInput.className =
+      "form-container__itemsList--input-boxes__itemNAme--input";
+    newQTYInput.setAttribute("text", "text");
+    newQTYInput.value = itemTwoQty;
+    newQTYInput.addEventListener('change', (e) => setItemTwoQty(e.target.value))
+    newQTYInput.placeholder = "QTY";
+
+    const parent = document.getElementById("#input");
+    const parentQTY = document.getElementById("#inputQTY");
+    parent.appendChild(newinput);
+    parentQTY.appendChild(newQTYInput);
+  };
 
   return (
     <form
@@ -46,13 +78,15 @@ export const NewInvoiceForm = () => {
       onSubmit={(e) => {
         e.preventDefault();
         addNewForm();
-        newItem()
+        newItem();
       }}
     >
       <h3 className="form-container__title">New Invoice</h3>
       <div className="form-container__new-form-container">
         <div className="form-container__new-form-container--bill-from-form">
-          <h3>Bill from</h3>
+          <h3 className="form-container__new-form-container--bill-from-form__title">
+            Bill from
+          </h3>
           <label className="form-container__new-form-container--bill-from-form__address">
             {" "}
             Street Address
@@ -62,7 +96,6 @@ export const NewInvoiceForm = () => {
               value={senderStreet}
               onChange={(e) => setSenderStreet(e.target.value)}
             />
-            {senderStreet.length < 2 ? "This is required" : ""}
           </label>
 
           <div className="form-container__new-form-container--bill-from-form__address-two">
@@ -97,7 +130,9 @@ export const NewInvoiceForm = () => {
         </div>
 
         <div className="form-container__new-form-container--bill-to">
-          <h3>Bill To</h3>
+          <h3 className="form-container__new-form-container--bill-to__title">
+            Bill To
+          </h3>
           <label className="form-container__new-form-container--bill-to--inputs">
             Client's Name
             <input
@@ -116,6 +151,9 @@ export const NewInvoiceForm = () => {
               onChange={(e) => setClientsEMail(e.target.value)}
             />
           </label>
+          {newInvoiceErr ? (
+            <Alert severity="error">{errorFormText}</Alert>
+          ) : null}
 
           <label className="form-container__new-form-container--bill-to--inputs">
             Street Address
@@ -176,6 +214,7 @@ export const NewInvoiceForm = () => {
               {" "}
               Payment Terms
               <input
+                placeholder="How many month?"
                 type="number"
                 onChange={(e) => setPaymentTerms(e.target.value)}
                 value={paymentTerms}
@@ -198,30 +237,13 @@ export const NewInvoiceForm = () => {
         </div>
 
         <div className="form-container__itemsList">
-          <h4 className="form-container__itemsList--title">Item List  </h4>
-
-          <form onSubmit={(e) => { e.preventDefault(); newItem()}} className="form-container__itemsList--input-boxes">
-            <label className="form-container__itemsList--input-boxes__itemNAme">
-              Item NAme{" "}
-              <input
-                value={itemName}
-                onChange={(e) => setItemName(e.target.value)}
-                placeholder="Add Item"
-              />
-            </label>
-
-            <label>
-              Qty. <input placeholder="QTY" value={qty} onChange={(e) => setQty(e.target.value)} />{" "}
-            </label>
-
-            <label>
-              Price
-              <input placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)} />
-            </label>
-
-            <label>Total</label>
-          </form>
+          <h4 className="form-container__itemsList--title">Services List </h4>
+          <AddItemForm />
         </div>
+        <div id="#input"></div>
+        {addInput}
+        {addInput ? <AddItemForm /> : null}
+        <button onClick={() => pushInput()}>+ Add Item</button>
       </div>
 
       <div className="form-container__btn-container">

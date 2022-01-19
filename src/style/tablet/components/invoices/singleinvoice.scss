@@ -1,15 +1,19 @@
 @import "../../typography/mixins.scss";
 @import "../../typography/variables.scss";
 
+
+@media(max-width: 1000px) {
+  
 .single-invoice-container {
-  padding: 20px 20px;
+  padding: 20px 40px;
+  width: 100%;
 
   &__go-back-btn {
       margin-top: 2em;
     &--btn {
       border: none;
       background: none;
-      width: 8%;
+      width: 13%;
       padding: 10px;
       display: flex;
       justify-content: row;
@@ -17,6 +21,7 @@
       align-items: center;
       text-decoration: none;
       color: black;
+
 
       &__icon {
       }
@@ -32,11 +37,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     margin-top: 1em;
     background-color: $invoice-lightgrey;
     border-radius: 10px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+
     &--title-box {
       padding: 10px;
 
@@ -57,11 +63,12 @@
 
     &--btns-container {
       padding: 10px;
-      width: 44%;
+      width: 74%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+
 
       &__edit {
         @include cancel-btn;
@@ -236,4 +243,6 @@
       }
     }
   }
+}
+
 }

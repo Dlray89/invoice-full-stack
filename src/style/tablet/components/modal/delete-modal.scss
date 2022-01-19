@@ -1,0 +1,24 @@
+@import '../../typography/mixins.scss';
+
+.dialog-content {
+    width: 90%;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    
+}
+
+.btn-container {
+    text-align: right;
+    width: 90%;
+    margin: 1em auto;
+
+    &--delete {
+        @include delete-btn;
+        margin-left: 2em;
+        width: 25%;
+    }
+
+    &--cancel {
+        @include cancel-btn;
+    }
+}

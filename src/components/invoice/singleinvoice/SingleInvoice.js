@@ -12,7 +12,13 @@ function SingleInvoice() {
   const [singleInvoice, setSingleInvoice] = useState({});
   const { openEditForm, setOpenEditForm } = useContext(FromContext);
   const [singleItems, setSingleItems] = useState([]);
+  const [amount, setAmount] = useState(0)
+  const [QTY, setQTY] = useState(0)
   const { id } = useParams();
+
+  
+  // const getAmount = getPrice.reduce((a, b) => a + b)
+
 
   useEffect(() => {
     axios
@@ -26,6 +32,7 @@ function SingleInvoice() {
       .catch((err) => {
         console.log(`${err}: error has occured`);
       });
+ 
   }, [id]);
 
   return (
@@ -45,6 +52,7 @@ function SingleInvoice() {
             singleInvoice={singleInvoice}
           />
           <div className="single-invoice-container--details">
+
             <div className="single-invoice-container--details__senders-info">
               <div className="single-invoice-container--details__senders-info--title-box">
                 <h4 className="single-invoice-container--details__senders-info--title-box__id">
@@ -118,12 +126,12 @@ function SingleInvoice() {
             </div>
 
             <div className="single-invoice-container--details__items-box">
-       
+                  
               {singleItems.map((item) => (
                 <>
-                  <div className="single-invoice-container--details__items-box--items">
+                  <div key={item.id} className="single-invoice-container--details__items-box--items">
                     <div>
-                      <h4>Item NAme</h4>
+                      <h4>Item Name</h4>
                       <p> {item.itemName}</p>
                     </div>
 
@@ -152,7 +160,7 @@ function SingleInvoice() {
                 {" "}
                 <div className="single-invoice-container--details__items-box--amount-box">
                   <p className="single-invoice-container--details__items-box--amount-box--title">Amount Due</p>
-                  <p className="single-invoice-container--details__items-box--amount-box--title">$0</p>
+                  <p className="single-invoice-container--details__items-box--amount-box--title">${ Number(singleInvoice.total)}</p>
                 </div>
               </div>
             </div>

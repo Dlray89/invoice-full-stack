@@ -6,10 +6,11 @@ import empty from "../../assets/illustration-empty.svg";
 import { FromContext } from "../../context/form-context/Form-Context";
 import { NewInvoiceForm } from "../forms/new-invoice-form";
 import RouterScroll from "../../utils/RouterScroll";
+import { Alert, CircularProgress, Snackbar } from "@mui/material";
 
 export const InvoiceListItems = () => {
   const { invoicesList, NewStatList, StatusList, filter,  filterStatus  } = useContext(InvoiceContext);
-  const { openForm } = useContext(FromContext);
+  const { openForm, total, newInvoiceLoading, } = useContext(FromContext);
   const numberOfInvoices = invoicesList.length;
 
   
@@ -18,7 +19,8 @@ export const InvoiceListItems = () => {
     <>
       <RouterScroll />
       <div className="empty-invoices">
-        {console.log(NewStatList, StatusList , 'newStatus')}
+        {console.log(NewStatList, StatusList, 'newStatus')}"
+
         <img className="empty-invoices__img" src={empty} alt="empty" />
         <div className="empty-invoices__text-content">
           <h3 className="empty-invoices__text-content--title">
@@ -44,7 +46,9 @@ export const InvoiceListItems = () => {
   ) : (
     <>
       {" "}
-      <div className="invoice-list-container">
+        <div className="invoice-list-container">
+        {newInvoiceLoading ? <Alert  style={{width:'60%', margin: '0 auto'}} security="success">Invoice Created Successfully</Alert>: null}
+
         {invoicesList.filter(filterStatus[filter]).map((invoice) => (
           <Link
             to={`${invoice.id}`}
@@ -57,7 +61,8 @@ export const InvoiceListItems = () => {
             </p>
             <p>{invoice.paymentDue}</p>
             <p>{invoice.clientName}</p>
-            <p>${Number(invoice.total).toFixed(2)} </p>
+            {console.log(total, 'total')}
+            <p>${Number(invoice.total).toFixed(2)}</p>
             <p
               className={
                 invoice.status

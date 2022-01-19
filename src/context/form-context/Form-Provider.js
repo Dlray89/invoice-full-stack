@@ -25,8 +25,10 @@ export const FormProvider = ({ children }) => {
   const [qty, setQty] = useState("");
   const [price, setPrice] = useState("");
   const [invoice_id, setInvoice_id] = useState("");
-
-  const [total, setTotal] = useState("");
+  const [newInvoiceLoading, setNewInvoiceLoading] = useState(false);
+  const [newInvoiceErr, setNewInvoiceErr] = useState(false);
+  const [errorFormText, setErrorFormText] = useState("");
+  const [total, setTotal] = useState('');
   const [streetErr] = useState("");
 
   const addNewForm = (e) => {
@@ -62,16 +64,23 @@ export const FormProvider = ({ children }) => {
           .then((res) => {
             console.log(res.data, invoice_id);
             setItems(res.data.item);
+            setTotal(Number(qty) * Number(price));
           })
           .catch((err) => {
             console.log(err);
+            setNewInvoiceErr(true);
           });
         setOpenForm(false);
+        setTotal(Number(qty) * Number(price));
         setInvoice_id(res.data.id);
         window.location.reload();
+        setNewInvoiceLoading(true);
       })
       .catch((err) => {
         console.log(err);
+        setNewInvoiceErr(true);
+        setErrorFormText("That Email Already Exists");
+
       });
   };
 
@@ -106,6 +115,7 @@ export const FormProvider = ({ children }) => {
   return (
     <FromContext.Provider
       value={{
+        newInvoiceLoading,
         toggleEditInouts,
         openEditForm,
         setOpenEditForm,
@@ -148,6 +158,10 @@ export const FormProvider = ({ children }) => {
         setItemName,
         setTotal,
         invoice_id,
+        newInvoiceErr,
+        setNewInvoiceErr,
+        errorFormText,
+        setErrorFormText,
       }}
     >
       {children}

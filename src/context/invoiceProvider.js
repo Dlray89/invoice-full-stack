@@ -27,7 +27,7 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const toggleStatus = (id) => {
     axios
-      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, { status: true })
+      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, { status: true, total: 0 })
       .then((res) => {
         setInvoicesList(res.data.change);
         console.log(res.data.change, "change");
@@ -78,7 +78,7 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const DeleteInvoice = (id) => {
     axios
-      .delete(`http://localhost:8080/api/invoices/${id}`)
+      .delete(`https://invoice-be22.herokuapp.com/api/invoices/${id}`)
       .then((res) => {
         setInvoicesList(res.data);
         history.push("/");
