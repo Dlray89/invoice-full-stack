@@ -5,12 +5,13 @@
   
 .header-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   margin-top: 3em;
   margin-bottom: 2em;
+
 
   &--title-content {
     &__title {
@@ -24,15 +25,18 @@
   }
 
   &--filter-container {
-    width: 58%;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 0px 10px;
 
+
     &__filter-btn-container {
       width: 58%;
+
+
 
 
       &--btn {
@@ -58,10 +62,11 @@
         position: absolute;
         background-color: white;
         width: 9%;
-        padding: 10px 10px;
+        padding: 10px 0px;
         box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.507);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+
 
         &__btn {
           border: none;
@@ -83,21 +88,23 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      width: 46%;
+      width: 38%;
       padding: 10px;
       background: none;
       border: none;
       text-transform: uppercase;
       cursor: pointer;
+margin-bottom: .5em;
+margin-left: 1.5em;
 
       &--title {
           font-size: .9rem;
+          text-align: center;
       }
 
       &--icon {
         width: 9%;
         height: 9%;
-        margin-left: .7em;
         
       }
     }
@@ -112,10 +119,9 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      width: 38%;
+      width: 34%;
       box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
       cursor: pointer;
-      border: solid 2px red;
 
 
 
