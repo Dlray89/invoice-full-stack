@@ -1,15 +1,20 @@
-@import "../../animation/slide-in.scss";
+// @import "../../animation/slide-in.scss";
 @import "../../typography/variables.scss";
+
+
+
+@media (max-width: 550px) {
+  
 .form-container {
   background-color: white;
-  padding: 0px 90px;
+  padding: 0px 30px;
   color: black;
-  width: 75%;
+  width: 90%;
   position: absolute;
   top: -0em;
-  left: -16em;
+  left: 3em;
   z-index: 0;
-  text-align: center;
+  text-align: left;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   animation: slideIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -20,17 +25,18 @@
   &__title {
     font-size: 2rem;
     border-bottom: solid 5px $invoice-blue;
-    margin-left: 10em;
     text-align: left;
     margin-bottom: 0.5em;
-    padding: 0.2em 0;
+    border-bottom: solid 5px $invoice-blue;
+    margin-left: 0em;
+
   }
 
   &__new-form-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 67%;
+    width: 100%;
     margin-left: auto;
     text-align: left;
 
@@ -97,6 +103,8 @@
         flex-direction: column;
         justify-content: space-between;
         margin-top: 1em;
+
+
         &__input {
           padding: 10px 10px;
           border: solid 2px rgba(0, 0, 0, 0.274);
@@ -136,7 +144,7 @@
     &--services {
       &__date-and-payment {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         margin-top: 1em;
 
@@ -204,7 +212,7 @@
 
     &--input-boxes {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-between;
       width: 100%;
       margin-top: 1em;
@@ -216,7 +224,7 @@
 
         &--input {
           margin: 0.5em auto;
-          width: 55%;
+          width: 100%;
           padding: 10px 10px;
           border: solid 2px rgba(0, 0, 0, 0.274);
           border-radius: 5px;
@@ -245,10 +253,10 @@
     color: white;
     margin-top: 1.3em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     width: 70%;
-    margin-left: auto;
+    margin:0 auto;
     padding: 20px;
 
     &--discard-btn {
@@ -256,15 +264,15 @@
       padding: 10px;
       border: none;
       border-radius: 20px;
-      width: 20%;
+      width: 100%;
       box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
       cursor: pointer;
     }
 
     &--sendbtns {
-      width: 50%;
+      width: 100%;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-between;
 
       &__draft {
@@ -273,9 +281,10 @@
         padding: 10px;
         border: none;
         border-radius: 20px;
-        width: 40%;
+        width: 100%;
         box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
         cursor: pointer;
+        margin: 1em 0px;
 
       }
 
@@ -285,10 +294,307 @@
         padding: 10px;
         border: none;
         border-radius: 20px;
-        width: 40%;
+        width: 100%;
         box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
         cursor: pointer;
 
+      }
+    }
+  }
+}
+}
+
+@media (max-width: 400px) {
+  .form-container {
+    background-color: white;
+    padding: 0px 25px;
+    color: black;
+    width: 87%;
+    position: absolute;
+    top: -0em;
+    left: 3em;
+    z-index: 0;
+    text-align: left;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    animation: slideIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.521);
+    max-height: 46.9em;
+    overflow-y: scroll;
+
+    &__title {
+      font-size: 2rem;
+      border-bottom: solid 5px $invoice-blue;
+      text-align: left;
+      margin-bottom: 0.5em;
+      border-bottom: solid 5px $invoice-blue;
+      margin-left: 0em;
+    }
+
+    &__new-form-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      margin-left: auto;
+      text-align: left;
+
+      &--bill-from-form {
+        width: 100%;
+
+        &__title {
+          color: $invoice-blue;
+        }
+
+        &__address {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-bottom: 1em;
+          margin-top: 1em;
+
+          &--input {
+            padding: 10px 10px;
+            border: solid 2px rgba(0, 0, 0, 0.274);
+            border-radius: 5px;
+            color: black;
+            font-size: 1em;
+            margin-top: 0.4em;
+          }
+        }
+
+        &__address-two {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1em;
+
+          &--inputs {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &__input {
+              padding: 10px 10px;
+              border: solid 2px rgba(0, 0, 0, 0.274);
+              border-radius: 5px;
+              color: black;
+              font-size: 1em;
+              margin-top: 0.4em;
+              width: 98%;
+            }
+          }
+        }
+      }
+
+      &--bill-to {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+
+        &__title {
+          color: $invoice-blue;
+        }
+
+        &--inputs {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-top: 1em;
+
+          &__input {
+            padding: 10px 10px;
+            border: solid 2px rgba(0, 0, 0, 0.274);
+            border-radius: 5px;
+            color: black;
+            font-size: 1em;
+            margin-top: 0.4em;
+            width: 100%;
+          }
+        }
+
+        &--inputs-two-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          &--inputs {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 1em;
+            width: 100%;
+
+            &__input {
+              padding: 10px 10px;
+              border: solid 2px rgba(0, 0, 0, 0.274);
+              border-radius: 5px;
+              color: black;
+              font-size: 1em;
+              margin-top: 0.4em;
+              width: 90%;
+            }
+          }
+        }
+      }
+
+      &--services {
+        &__date-and-payment {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-top: 1em;
+
+          &--date {
+            display: flex;
+            flex-direction: column;
+
+            &__input {
+              padding: 10px 10px;
+              border: solid 2px rgba(0, 0, 0, 0.274);
+              border-radius: 5px;
+              color: black;
+              font-size: 1em;
+              margin-top: 0.4em;
+              width: 100%;
+            }
+          }
+
+          &--payments {
+            display: flex;
+            flex-direction: column;
+
+            &__input {
+              padding: 10px 10px;
+              border: solid 2px rgba(0, 0, 0, 0.274);
+              border-radius: 5px;
+              color: black;
+              font-size: 1em;
+              margin-top: 0.4em;
+              width: 100%;
+            }
+          }
+        }
+
+        &__project-desc {
+          margin-top: 1em;
+          &--name {
+            display: flex;
+            flex-direction: column;
+
+            &__input {
+              padding: 10px 10px;
+              border: solid 2px rgba(0, 0, 0, 0.274);
+              border-radius: 5px;
+              color: black;
+              font-size: 1em;
+              margin-top: 0.4em;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    &__itemsList {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 1em;
+
+      &--title {
+        font-size: 1.5rem;
+        color: $invoice-blue;
+      }
+
+      &--input-boxes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1em;
+
+        &__itemNAme {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+
+          &--input {
+            margin: 0.5em auto;
+            width: 100%;
+            padding: 10px 10px;
+            border: solid 2px rgba(0, 0, 0, 0.274);
+            border-radius: 5px;
+            color: black;
+            font-size: 1em;
+          }
+        }
+
+        &__itemInput {
+          margin-top: 0.5em;
+          padding: 10px 10px;
+          border: solid 2px rgba(0, 0, 0, 0.274);
+          border-radius: 5px;
+          color: black;
+          font-size: 1em;
+        }
+
+        &__itemInput-two {
+          margin-top: 0.5em;
+          border: solid 2px;
+        }
+      }
+    }
+
+    &__btn-container {
+      color: white;
+      margin-top: 1.3em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 70%;
+      margin: 0 auto;
+      padding: 20px;
+
+      &--discard-btn {
+        background-color: #f9fafe;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        width: 100%;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+        cursor: pointer;
+      }
+
+      &--sendbtns {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__draft {
+          background-color: #373b53;
+          color: white;
+          padding: 10px;
+          border: none;
+          border-radius: 20px;
+          width: 100%;
+          box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+          cursor: pointer;
+          margin: 1em 0px;
+        }
+
+        &__saveandsendbtn {
+          background-color: $invoice-blue;
+          color: white;
+          padding: 10px;
+          border: none;
+          border-radius: 20px;
+          width: 100%;
+          box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
+          cursor: pointer;
+        }
       }
     }
   }
