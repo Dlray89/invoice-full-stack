@@ -12,8 +12,7 @@ function SingleInvoice() {
   const [singleInvoice, setSingleInvoice] = useState({});
   const { openEditForm, setOpenEditForm } = useContext(FromContext);
   const [singleItems, setSingleItems] = useState([]);
-  const [amount, setAmount] = useState(0)
-  const [QTY, setQTY] = useState(0)
+
   const { id } = useParams();
 
   

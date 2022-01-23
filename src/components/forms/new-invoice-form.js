@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Alert } from "@mui/material";
 import { FromContext } from "../../context/form-context/Form-Context";
 import { AddItemForm } from "./add-item-form";
@@ -33,12 +33,9 @@ export const NewInvoiceForm = () => {
     setClientState,
     clientZipcode,
     setClientZipcode,
-    setTotal,
-    total,
+
     newInvoiceErr,
-    setNewInvoiceErr,
     errorFormText,
-    setErrorFormText,
     newItem,
     itemTwoQty,
     setItemTwoQty,
@@ -46,8 +43,7 @@ export const NewInvoiceForm = () => {
     setItemTwo
   } = useContext(FromContext);
 
-  const [addInput, setAddInput] = useState(false);
-  const [streetErr, setStreetErr] = useState("");
+  const [addInput, ] = useState(false);
 
 
   const pushInput = () => {

@@ -1,5 +1,5 @@
 import { Alert } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext  } from "react";
 import { FromContext } from "../../context/form-context/Form-Context";
 
 export const AddItemForm = () => {
@@ -14,8 +14,6 @@ export const AddItemForm = () => {
     total,
     setTotal,
   } = useContext(FromContext);
-  const [handleError, setHandleErr] = useState(false);
-  const [errorText, setErrorText] = useState("");
 
   return (
     <>
