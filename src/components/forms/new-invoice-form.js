@@ -37,36 +37,14 @@ export const NewInvoiceForm = () => {
     newInvoiceErr,
     errorFormText,
     newItem,
-    itemTwoQty,
-    setItemTwoQty,
-    itemTwo,
-    setItemTwo
-  } = useContext(FromContext);
+
+
+  } = useContext(FromContext)
+  
 
   const [addInput, ] = useState(false);
 
 
-  const pushInput = () => {
-    const newinput = document.createElement("input");
-    newinput.className = "form-container__itemsList--input-boxes__itemInput";
-    newinput.setAttribute("text", "text");
-    newinput.value = itemTwo;
-    newinput.addEventListener("change", (e) => setItemTwo(e.target.value))
-    newinput.placeholder = "Add Item";
-
-    const newQTYInput = document.createElement("input");
-    newQTYInput.className =
-      "form-container__itemsList--input-boxes__itemNAme--input";
-    newQTYInput.setAttribute("text", "text");
-    newQTYInput.value = itemTwoQty;
-    newQTYInput.addEventListener('change', (e) => setItemTwoQty(e.target.value))
-    newQTYInput.placeholder = "QTY";
-
-    const parent = document.getElementById("#input");
-    const parentQTY = document.getElementById("#inputQTY");
-    parent.appendChild(newinput);
-    parentQTY.appendChild(newQTYInput);
-  };
 
   return (
     <form
@@ -239,7 +217,7 @@ export const NewInvoiceForm = () => {
         <div id="#input"></div>
         {addInput}
         {addInput ? <AddItemForm /> : null}
-        <button onClick={() => pushInput()}>+ Add Item</button>
+        <button >+ Add Item</button>
       </div>
 
       <div className="form-container__btn-container">

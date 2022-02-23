@@ -10,7 +10,7 @@ import { FromContext } from "../../../context/form-context/Form-Context";
 
 function SingleInvoice() {
   const [singleInvoice, setSingleInvoice] = useState({});
-  const { openEditForm, setOpenEditForm } = useContext(FromContext);
+  const { openEditForm, setOpenEditForm} = useContext(FromContext);
   const [singleItems, setSingleItems] = useState([]);
 
   const { id } = useParams();

@@ -186,7 +186,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 38%;
+  width: 32%;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
   cursor: pointer;
 }
@@ -255,7 +255,7 @@
 .form-container__title {
   font-size: 2rem;
   border-bottom: solid 5px #7c5dfa;
-  margin-left: 10em;
+  margin-left: 12.5em;
   text-align: left;
   margin-bottom: 0.5em;
   padding: 0.2em 0;
@@ -337,13 +337,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
 }
 .form-container__new-form-container--bill-to--inputs-two-container--inputs {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 1em;
-  width: 100%;
 }
 .form-container__new-form-container--bill-to--inputs-two-container--inputs__input {
   padding: 10px 10px;
@@ -352,7 +352,7 @@
   color: black;
   font-size: 1em;
   margin-top: 0.4em;
-  width: 90%;
+  width: 100%;
 }
 .form-container__new-form-container--services__date-and-payment {
   display: flex;
@@ -491,22 +491,22 @@
   cursor: pointer;
 }
 
-.filter-btn-container {
+.filter-btns {
   display: flex;
   flex-direction: column;
   width: 100%;
-  text-align: center;
   margin-bottom: 0.5em;
   padding: 5px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
-.filter-btn-container:hover {
+.filter-btns:hover {
   background: lightgray;
   color: white;
 }
-.filter-btn-container__text {
+.filter-btns__text {
   text-align: center;
   margin: 0 auto;
 }

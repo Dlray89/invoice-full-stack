@@ -5,7 +5,7 @@ import { FromContext } from "./Form-Context";
 
 export const FormProvider = ({ children }) => {
   const { setInvoicesList } = useContext(InvoiceContext);
-  const [, setItems] = useState([]);
+  const [items, setItems] = useState([]);
   const [openForm, setOpenForm] = useState(false);
   const [openEditForm, setOpenEditForm] = useState(false);
   const [paymentDue, setPaymentDue] = useState("");
@@ -28,8 +28,9 @@ export const FormProvider = ({ children }) => {
   const [newInvoiceLoading, setNewInvoiceLoading] = useState(false);
   const [newInvoiceErr, setNewInvoiceErr] = useState(false);
   const [errorFormText, setErrorFormText] = useState("");
-  const [total, setTotal] = useState('');
+  const [total, setTotal] = useState(0);
   const [streetErr] = useState("");
+
 
   const addNewForm = (e) => {
     axios
@@ -162,6 +163,9 @@ export const FormProvider = ({ children }) => {
         setNewInvoiceErr,
         errorFormText,
         setErrorFormText,
+        items,
+        
+       
       }}
     >
       {children}

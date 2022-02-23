@@ -27,7 +27,7 @@ export const FilterBtn = ({ status, pressed, setFilter, filter}) => {
                 aria-pressed
                 className="header-container--filter-container__filter-btn-container--selection-filters__btn"
               >
-                <p >{StatusList}</p>
+              {StatusList}
                 {console.log(status, 'status to', StatusList)}
               </div>
               

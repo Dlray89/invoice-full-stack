@@ -64,14 +64,13 @@ export const AddItemForm = () => {
           Total
           <input
             className="form-container__itemsList--input-boxes__itemNAme--input"
-            placeholder={Number(qty) * Number(price)}
+            placeholder='Total Price'
             value={total}
             onChange={(e) => setTotal(e.target.value)}
           />
-          {/* {total.length < 0 ? "sdqwx": "wefdewr"} */}
         </label>
       </form>
-      {total.length < 1 ? <Alert style={{width:'100%', }} severity="error" >You must type reflected Total!</Alert> : null}
+      {price.length > 1 ? <Alert style={{ width: '100%', }} severity='info' >Your Total is ${ Number(qty) * Number(price)}</Alert> : null}
 
     </>
   );

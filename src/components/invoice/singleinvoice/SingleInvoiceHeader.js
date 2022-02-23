@@ -13,6 +13,7 @@ export const SingleInvoiceHeader = ({
   const { invoicesList, toggleStatus, UntoggleStatus, DeleteInvoice } =
     useContext(InvoiceContext);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  
   return (
     <>
       <div className="single-invoice-container__header">

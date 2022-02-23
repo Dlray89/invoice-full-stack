@@ -1,4 +1,4 @@
-import { useContext  } from "react";
+import { useContext } from "react";
 import { InvoiceContext } from "../../context/invoiceContext";
 import { Link } from "react-router-dom";
 import leftarrow from "../../assets/icon-arrow-right.svg";
@@ -8,12 +8,14 @@ import { NewInvoiceForm } from "../forms/new-invoice-form";
 import RouterScroll from "../../utils/RouterScroll";
 import { Alert } from "@mui/material";
 
+
+
 export const InvoiceListItems = () => {
-  const { invoicesList, NewStatList, StatusList, filter,  filterStatus  } = useContext(InvoiceContext);
+  const { invoicesList, NewStatList, StatusList, filter, filterStatus } = useContext(InvoiceContext);
   const { openForm, total, newInvoiceLoading, } = useContext(FromContext);
   const numberOfInvoices = invoicesList.length;
 
-  
+
 
   return numberOfInvoices === 0 ? (
     <>
@@ -46,8 +48,8 @@ export const InvoiceListItems = () => {
   ) : (
     <>
       {" "}
-        <div className="invoice-list-container">
-        {newInvoiceLoading ? <Alert  style={{width:'60%', margin: '0 auto'}} security="success">Invoice Created Successfully</Alert>: null}
+      <div className="invoice-list-container">
+        {newInvoiceLoading ? <Alert style={{ width: '60%', margin: '0 auto' }} security="success">Invoice Created Successfully</Alert> : null}
 
         {invoicesList.filter(filterStatus[filter]).map((invoice) => (
           <Link

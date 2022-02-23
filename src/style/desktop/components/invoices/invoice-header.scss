@@ -59,6 +59,7 @@
         box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.507);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        
 
         &__btn {
           border: none;
@@ -108,9 +109,10 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      width: 38%;
+      width: 32%;
       box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.356);
       cursor: pointer;
+
 
 
       &:hover {

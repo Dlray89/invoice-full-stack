@@ -3,11 +3,8 @@ import { InvoiceContext } from "./invoiceContext";
 import axios from "axios";
 import { createBrowserHistory } from "history";
 
-
-
-
 export const InvoiceProvidee = ({ children, props }) => {
-  const [toggleFilterBtn, setToggleFilterBtn] = useState(false)
+  const [toggleFilterBtn, setToggleFilterBtn] = useState(false);
   const [invoicesList, setInvoicesList] = useState([]);
   const history = createBrowserHistory();
   const [filter, setFilter] = useState("All");
@@ -27,7 +24,10 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const toggleStatus = (id) => {
     axios
-      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, { status: true, total: 0 })
+      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, {
+        status: true,
+        total: 0,
+      })
       .then((res) => {
         setInvoicesList(res.data.change);
         console.log(res.data.change, "change");
@@ -41,7 +41,9 @@ export const InvoiceProvidee = ({ children, props }) => {
 
   const UntoggleStatus = (id) => {
     axios
-      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, { status: false })
+      .put(`https://invoice-be22.herokuapp.com/api/invoices/${id}`, {
+        status: false,
+      })
       .then((res) => {
         setInvoicesList(res.data.change);
         console.log(res.data.change, "change");
@@ -59,21 +61,21 @@ export const InvoiceProvidee = ({ children, props }) => {
     Paid: (item) => item.status,
   };
   const NewStatList = Object.keys(filterStatus);
+
   const StatusList = NewStatList.map((item) => (
     <>
-    
-     <button
-        className="filter-btn-container"
+      <button
+        className="filter-btns"
         aria-pressed={item === filter}
         key={item}
         onClick={() => {
-          setFilter(item); setToggleFilterBtn(false)
+          setFilter(item);
+          setToggleFilterBtn(false);
         }}
       >
-        <p     className="filter-btn-container__text">{item}</p>
+        <p className="filter-btns__text">{item}</p>
       </button>
     </>
-     
   ));
 
   const DeleteInvoice = (id) => {
@@ -101,7 +103,8 @@ export const InvoiceProvidee = ({ children, props }) => {
         toggleStatus,
         UntoggleStatus,
         filterStatus,
-        toggleFilterBtn, setToggleFilterBtn
+        toggleFilterBtn,
+        setToggleFilterBtn,
       }}
     >
       {children}
